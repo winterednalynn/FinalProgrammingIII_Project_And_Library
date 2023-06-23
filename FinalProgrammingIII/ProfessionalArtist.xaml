@@ -9,6 +9,33 @@
     <Canvas Background="White">
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="212" FontSize="18"><Run Text="❉⊱•═•⊰❉⊱•═•⊰❉⊱•═•⊰❉"/><LineBreak/><Run/></TextBlock>
         <TextBlock TextWrapping="Wrap" Height="50" Width="212" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="588" Canvas.Top="409"><Run Text="❉⊱•═•⊰❉⊱•═•⊰❉⊱•═•⊰❉"/><LineBreak/><Run/></TextBlock>
+        <Label Content="Name: " Canvas.Left="20" Canvas.Top="50" Height="32" Width="128" FontFamily="Century Gothic" FontSize="20"/>
+        <Label Content="Username" Canvas.Left="20" Canvas.Top="138" Height="32" Width="128" FontFamily="Century Gothic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Password" Canvas.Left="20" Canvas.Top="234" Height="32" Width="128" FontFamily="Century Gothic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Role:" Canvas.Left="20" Canvas.Top="317" Height="32" Width="128" FontFamily="Century Gothic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbRoles" Canvas.Left="28" Canvas.Top="354" Width="184" Height="25" FontFamily="Century Gothic" FontSize="14" BorderBrush="#FF711931" BorderThickness="5,1,1,5" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="cbRoles_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF6ACE34" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label x:Name="lblname" Content="" Canvas.Left="217" Canvas.Top="7" RenderTransformOrigin="-0.293,0.178" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Height="33" FontFamily="Century Gothic" FontSize="14" BorderBrush="#FF711931" BorderThickness="5,0,0,5"/>
+        <TextBox x:Name="txtName" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="87" Width="184" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>
+        <TextBox x:Name="txtUName" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="187" Width="184" Height="30" FontFamily="Century Gothic" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>
+        <TextBox x:Name="txtUPassword" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="282" Width="184" Height="30" FontFamily="Century Gothic" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>
+        <ListView x:Name="LVProfessional" Height="338" Width="467" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="290" HorizontalAlignment="Left" Canvas.Top="71" VerticalAlignment="Top" Foreground="#FF040001" FontFamily="Century Gothic" BorderBrush="#FF350430" BorderThickness="5,1,1,5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UserName}" Header="UserName"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Role1}" Header="Role"/>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnAddUser" Content="Add User " Canvas.Left="44" Canvas.Top="394" Height="30" Width="121" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Century Gothic" FontSize="14" Click="btnAddUser_Click"/>
 
     </Canvas>
 </Window>

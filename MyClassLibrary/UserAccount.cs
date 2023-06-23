@@ -30,6 +30,13 @@ namespace MyClassLibrary
                 _role = role;
             }
 
+        public UserAccount(string name, string userName, string password)
+        {
+            _name = name;
+            _userName = userName;
+            _password = password;
+        }
+
         public string Name { get => _name; set => _name = value; }
         public string UserName { get => _userName; set => _userName = value; }
         public string Password { get => _password; set => _password = value; }

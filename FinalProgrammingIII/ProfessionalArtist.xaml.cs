@@ -47,8 +47,8 @@ namespace FinalProgrammingIII
             string Name = txtName.Text;
             string UserName = txtUName.Text;
             string Password = txtUPassword.Text;
-            addUser.Add(new UserAccount(Name, UserName, Password)); 
-            LVProfessional.ItemsSource = addUser;
+            addUser.Add(new UserAccount(Name, UserName, Password));
+             
         }
 
         private void cbRoles_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -38,12 +38,13 @@ namespace FinalProgrammingIII
             accounts.Add(new UserAccount("Vision", "Vision", "Vision", UserAccount.Role.BeautyStudent)); 
             accounts.Add(new UserAccount("Storm", "Storm", "Storm",UserAccount.Role.BeautyStudent));
 
-            SaveAccounts(); 
+            SaveAccounts(); //TESTED & list is prompt to a JSON. 
             
 
         }
-
-        public static void SaveAccounts()
+        //JSON (JavaScript Object Notation) is a popular data format used for representing structured data.
+        //It's common to transmit and receive data between a server and web application in JSON format.
+        public static void SaveAccounts() //Save json method 
         {
             JsonSerializerOptions jso = new JsonSerializerOptions()
             {
@@ -52,41 +53,32 @@ namespace FinalProgrammingIII
             string jsonManager = JsonSerializer.Serialize(accounts, jso);
             File.WriteAllText(accountInformation, jsonManager);
         }
-        public static void LoadAccounts()
+        public static void LoadAccounts() // Load jSon Method 
         {
             
             string listFromFile = File.ReadAllText(accountInformation);
             accounts = JsonSerializer.Deserialize<List<UserAccount>>(listFromFile);
         }
 
+        public static string userTransactions()
+        {
+            return currentAccount.Name + transactionextension; 
+        }
+        
+        public static void Adduser(UserAccount account)
+        {
+            accounts.Add(account);
+            SaveAccounts();
+        }
+        
+        public static void readusers()
+        {
+            UserAccount UAccounts = JsonSerializer.Deserialize<UserAccount>(accountInformation);
+        }
     }
 }
 
-//public static useraccount currentuser;
 
-//public static list<useraccount> accounts = new list<useraccount>();
 
-//public static string userinformation = "users.json";
-//static string transactionextension = "_transaction.csv";
 
-//use a static constructor to load the accounts list ( make sure a file exist before you try to load )
-//static data()
-//{
-//    readusers();
-//}
 
-//special method with provided code ( helps save a file with the users name and transaction )
-// this creates a unique file automatically based on the user account that's logged in
-
-//public static string userstransactions()
-//{
-//    return currentuser.name + transactionextension;
-//}
-
-//public static void preload() // used to load accounts list the first time, then save to .json
-
-//        public static void adduser(useraccount account) // add user to accounts and then save to json
-
-//        public static void saveusers() // save accounts json
-
-//        public static void readusers() // read json and deserialize to accounts

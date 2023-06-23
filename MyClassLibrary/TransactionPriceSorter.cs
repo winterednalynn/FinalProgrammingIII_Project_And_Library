@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyClassLibrary
 {
-    internal class TransactionPriceSorter
+    internal class TransactionPriceSorter : IComparer<Transactions>
     {
+        public int Compare(Transactions? x, Transactions? y)
+        {
+            return x.Price.CompareTo(y.Price);
+        }
     }
 }

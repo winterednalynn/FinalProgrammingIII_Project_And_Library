@@ -21,7 +21,6 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <Label x:Name="lblname" Content="" Canvas.Left="217" Canvas.Top="7" RenderTransformOrigin="-0.293,0.178" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Height="33" FontFamily="Century Gothic" FontSize="14" BorderBrush="#FF711931" BorderThickness="5,0,0,5"/>
         <TextBox x:Name="txtName" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="87" Width="184" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>
         <TextBox x:Name="txtUName" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="187" Width="184" Height="30" FontFamily="Century Gothic" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>
         <TextBox x:Name="txtUPassword" Canvas.Left="28" TextWrapping="Wrap" Canvas.Top="282" Width="184" Height="30" FontFamily="Century Gothic" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF711931" BorderThickness="5,1,1,5"/>

@@ -12,11 +12,13 @@
         <ListView x:Name="LVUser" Height="316" Width="400" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="304" Canvas.Top="74" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding EnterName}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price"/>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Canvas Height="158" Width="252" Canvas.Left="31" Canvas.Top="76" Background="#FF76FFDC" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Canvas Height="187" Width="252" Canvas.Left="31" Canvas.Top="59" Background="#FF76FFDC" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Label Content="Name: " Canvas.Top="10" Height="30" Width="81" HorizontalAlignment="Left" Canvas.Left="10" VerticalAlignment="Top" BorderThickness="5,0,0,5" FontFamily="Century Gothic" FontSize="14">
                 <Label.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -25,7 +27,7 @@
                     </LinearGradientBrush>
                 </Label.BorderBrush>
             </Label>
-            <Label Content="Price" Canvas.Top="89" Height="30" Width="81" Canvas.Left="10" BorderThickness="5,0,0,5" FontFamily="Century Gothic" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label x:Name="txtUPrice" Content="Price" Canvas.Top="89" Height="30" Width="81" Canvas.Left="10" BorderThickness="5,0,0,5" FontFamily="Century Gothic" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Label.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0.069"/>
@@ -34,7 +36,8 @@
                 </Label.BorderBrush>
             </Label>
             <TextBox x:Name="txtUpageName" Canvas.Left="97" TextWrapping="Wrap" Text="TextBox" Canvas.Top="55" Width="135" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" BorderBrush="#FF01091F" FontFamily="Century Gothic" BorderThickness="2,1,2,2"/>
-            <TextBox x:Name="txtPrice" Canvas.Left="97" TextWrapping="Wrap" Text="TextBox" Canvas.Top="124" Width="135" Height="24" BorderBrush="#FF01091F" FontFamily="Century Gothic" BorderThickness="2,2,2,4" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtUpagePrice" Canvas.Left="97" TextWrapping="Wrap" Text="TextBox" Canvas.Top="124" Width="135" Height="24" BorderBrush="#FF01091F" FontFamily="Century Gothic" BorderThickness="2,2,2,4" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button Content="Enter" Canvas.Left="31" Canvas.Top="167" HorizontalAlignment="Center" Height="20" VerticalAlignment="Center" Width="170" Click="Button_Click"/>
         </Canvas>
         <Canvas Height="141" Width="252" Canvas.Left="31" Canvas.Top="251" Background="#FF76FFDC" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Label Content="       Export New CSV " Canvas.Left="26" Canvas.Top="10" Height="41" Width="200" FontFamily="Century Gothic" FontSize="14" BorderThickness="4,4,4,4" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold">
@@ -47,7 +50,7 @@
             </Label>
             <TextBox x:Name="txtCSV" Canvas.Left="23" TextWrapping="Wrap" Canvas.Top="70" Width="203" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" FontFamily="Century Gothic"/>
         </Canvas>
-        <Button x:Name="btnSortName" Content="Name" Canvas.Left="219" Canvas.Top="16" Height="32" Width="96" BorderThickness="2,2,2,1" FontFamily="Tahoma" FontSize="14">
+        <Button x:Name="btnSortName" Content="Name" Canvas.Left="219" Canvas.Top="16" Height="32" Width="96" BorderThickness="2,2,2,1" FontFamily="Tahoma" FontSize="14" Click="btnSortName_Click">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00013A" Offset="0.004"/>

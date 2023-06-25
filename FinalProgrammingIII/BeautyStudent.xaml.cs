@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MyClassLibrary;
 
 namespace FinalProgrammingIII
 {
@@ -23,13 +24,15 @@ namespace FinalProgrammingIII
     /// </summary>
     public partial class BeautyStudent : Window
     {
-        List<Transaction> transactions = new List<Transaction>(); //Declared in Beauty Student Window. 
+        List<Transactions> transaction = new List<Transactions>(); //Declared in Beauty Student Window. 
+        Transactions costAction = new Transactions();
+        
+        
 
         const string filePath = "Transaction.csv";
         public BeautyStudent()
         {
             InitializeComponent();
-            
 
 
         }
@@ -41,6 +44,21 @@ namespace FinalProgrammingIII
         }
         public void UpdateListView()
         {
+            
+
+            string name = txtUpageName.Text;
+            string cost = txtUpagePrice.Text;
+            decimal price = decimal.Parse(txtUpagePrice.Text);
+
+            name = costAction.Name;
+            price = costAction.Price; 
+        
+            transaction.Add(new Transactions(name, price));
+
+            LVUser.ItemsSource = transaction;
+
+          
+
 
         }
         public void WriteTransaction(string filePath)
@@ -59,6 +77,21 @@ namespace FinalProgrammingIII
             }
 
             return tList;   
+        }
+
+        private void btnSortName_Click(object sender, RoutedEventArgs e)
+        {
+            Transactions _transactions = new MyClassLibrary.Transactions(); 
+            _transactions.CompareTo(_transactions);
+            
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateListView();
+           
+            Data.userTransactions();
         }
 
 

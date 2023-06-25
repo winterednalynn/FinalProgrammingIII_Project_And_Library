@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyClassLibrary
 {
-    internal class Transactions : IComparable<Transactions>
+    public class Transactions : IComparable<Transactions>
     {
         // Fields and properties for all
 
@@ -30,14 +30,14 @@ namespace MyClassLibrary
         }
 
         public DateTime TransactionTime { get => _transactionTime; set => _transactionTime = value; }
-        public string Name { get => _name; set => _name = value; }
+        public string EnterName { get => _name; set => _name = value; }
         public decimal Price { get => _price; set => _price = value; }
         public decimal Tax { get => _tax; set => _tax = value; }
         public decimal Total { get => _total; set => _total = value; }
 
         public int CompareTo(Transactions other)
         {
-            int nameCompare= string.Compare(Name, other.Name); //Aiming to transition our string to an int. .COMPARE compares two string objects & returns it's value into an integer 
+            int nameCompare= string.Compare(EnterName, other.EnterName); //Aiming to transition our string to an int. .COMPARE compares two string objects & returns it's value into an integer 
 
             if (nameCompare == 0)
             {
